@@ -30,12 +30,13 @@ try:
     animals_output = ""
     for animal_data in data:
         animals_output += f"<li>\n"
-        animals_output += f"  <strong>Name:</strong> {animal_data.get('name', 'N/A')}<br>\n"
-        animals_output += f"  <strong>Diet:</strong> {animal_data.get('characteristics', {}).get('diet', 'N/A')}<br>\n"
+        animals_output += f"  <strong>Name:</strong> {animal_data.get('name', 'Print Data From File / Task')}<br>\n"
+        animals_output += f"  <strong>Diet:</strong> {animal_data.get('characteristics', {}).get('diet', 'Print Data From File / Task.')}<br>\n"
         locations = animal_data.get('locations', [])
-        location = locations[0] if locations else "N/A"
+        location = locations[0] if locations else "Print Data From File / Task."
         animals_output += f"  <strong>Location:</strong> {location}<br>\n"
-        animals_output += f"  <strong>Type:</strong> {animal_data.get('type', 'N/A')}<br>\n"
+        #arreglar type linea 38
+        animals_output += f"  <strong>Type:</strong> {animal_data.get('characteristics', {}).get('diet', 'Print Data From File / Task.')}<br>\n"
         animals_output += f"</li>\n\n"
 
     #4:replace the placeholder with the animals' data
